@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Train Services - Rail Bandi</title>
+    
+    <link rel="stylesheet" href="../static/style.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" />
+</head>
+<body>
+
+<!-- Header Section -->
+<header class="header">
+    <div class="container">
+        <div class="logo">
+            
+            <h1>Rail<span>bandi</span></h1>
+        </div>
+        <!-- Navigation Menu -->
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('index') }}">Home</a></li>
+                
+                <li><a href="{{url_for('track')}}">Train Schedules</a></li>
+                <li><a href="{{url_for('contact')}}">Contact Us</a></li>
+                <li><a href="{{ url_for('cancel_booking') }}">Cancel Ticket</a></li>
+                <li><a href="{{ url_for('login') }}">Login</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<!-- Main Sections -->
+<section id="search" class="section">
+    <div class="container">
+        <h2>Search and Book Trains</h2>
+        <form action="/search" method="post">
+            <div class="form-group">
+                <label for="from"><i class="fas fa-map-marker-alt"></i> From</label>
+                <input type="text" id="from" name="from" placeholder="Enter station or city">
+            </div>
+            <div class="form-group">
+                <label for="to"><i class="fas fa-map-marker-alt"></i> To</label>
+                <input type="text" id="to" name="to" placeholder="Enter station or city">
+            </div>
+            <div class="form-group">
+                <label for="date"><i class="far fa-calendar-alt"></i> Date</label>
+                <input type="date" id="date" name="date">
+            </div>
+            <button type="submit"><i class="fas fa-search"></i> Search Trains</button>
+        </form>
+    </div>
+</section>
+
+
+
+
+<section id="contact" class="section">
+    <div class="container">
+        
+    </div>
+</section>
+
+<!-- Footer Section -->
+<footer class="footer">
+    <div class="container">
+        <p>&copy; 2024 Rail Bandi. All rights reserved.</p>
+    </div>
+</footer>
+
+</body>
+</html>

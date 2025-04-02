@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking - Rail Bandi</title>
+    <link rel="stylesheet" href="../static/style.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            color: #ebe8e5;
+        }
+
+        .header {
+            background-color: #181818c5;
+            padding: 20px 0;
+        }
+
+        .header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header .logo img {
+            max-height: 50px;
+            padding: 10px;
+        }
+
+        .header .logo h1 {
+            margin: 0;
+            font-size: 1.5rem;
+            color: white;
+            padding: auto;
+        }
+
+        .header .logo h1 span {
+            margin: 0;
+            font-size: 1.5rem;
+            padding: auto;
+            display: inline-block;
+            background-color: #f68e05;
+            color: black;
+            border-radius: 4px;
+            margin-left: 5px;
+        }
+
+        .section {
+            padding: 40px 0;
+        }
+
+        .section .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section h2 {
+            margin-bottom: 20px;
+            font-size: 2rem;
+            color: #f68e05;
+        }
+
+        form {
+            background-color: #222020;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        form label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 1rem;
+            color: #f68e05;
+        }
+
+        form input,
+        form select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            font-size: 1rem;
+            border: 1px solid #f68e05;
+            border-radius: 5px;
+            background-color: #f1f0ee;
+            color: #625f5c;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 5px;
+            background-color: #f68e05;
+            color: #040404;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #d88415;
+        }
+
+        .footer {
+            background-color: #222020;
+            padding: 20px 0;
+            text-align: center;
+            color: #fff;
+        }
+
+        .footer p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Header Section -->
+<header class="header">
+    <div class="container">
+        <div class="logo">
+            <a href="{{ url_for('index') }}"><img src="https://i.ibb.co/j6HZmmx/logo-search-grid-1x.jpg" alt="logo-search-grid-1x" border="0"></a>
+            <h1>Rail<span>bandi</span></h1>
+        </div>
+    </div>
+</header>
+
+<!-- Booking Form Section -->
+<section class="section">
+    <div class="container">
+        <h2>Book Your Train</h2>
+        <form method="POST" action="{{ url_for('book') }}">
+            <label for="name">Name:</label>
+            <input type="text" name="name" required>
+    
+            <label for="age">Age:</label>
+            <input type="number" name="age" required>
+    
+            <label for="gender">Gender:</label>
+            <select name="gender" required>
+                <option value="" disabled selected>Select your gender</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select>
+    
+            <label for="contact">Contact:</label>
+            <input type="text" name="contact" required>
+    
+            <label for="email">Email:</label>
+            <input type="email" name="email" required>
+    
+            <label for="train_id">Train ID:</label>
+            <select name="train_id" required>
+                {% for train in trains %}
+                    <option value="{{ train.id }}">{{ train.train_name }} ({{ train.train_number }}){{train.origin}}-{{train.destination}}</option>
+                {% endfor %}
+            </select>
+    
+            <button type="submit">Book</button>
+        </form>
+    </div>
+</section>
+
+<!-- Footer Section -->
+<footer class="footer">
+    <div class="container">
+        <p>&copy; 2024 Rail Bandi. All rights reserved.</p>
+    </div>
+</footer>
+
+</body>
+</html>

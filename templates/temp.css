@@ -1,0 +1,185 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    color: #ebe8e5;
+}
+
+.header {
+    background-color: #181818c5;
+    padding: 20px 0;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header .logo img {
+    max-height: 50px;
+    padding: 10px;
+}
+
+.header .logo h1 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: white;
+    padding: auto;
+}
+
+.header .logo h1 span {
+    margin: 0;
+    font-size: 1.5rem;
+    padding: auto;
+    display: inline-block;
+    background-color: #f68e05;
+    color: black;
+    border-radius: 4px;
+    margin-left: 5px;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 30px;
+}
+
+nav ul li a {
+    color: #fafaf9;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 10px;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+.section {
+    padding: 40px 0;
+}
+
+.section .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section h2 {
+    margin-bottom: 20px;
+    font-size: 2rem;
+    color: #f68e05;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 1rem;
+    color: #f68e05;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #f68e05;
+    border-radius: 5px;
+    background-color: #f1f0ee;
+    color: #625f5c;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #f68e05;
+    color: #040404;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #d88415;
+}
+
+.train-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.train-item {
+    background-color: #181818c5;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(243, 241, 241, 0.1);
+    text-align: left;
+}
+
+.train-item h3 {
+    font-size: 1.5rem;
+    color: #f6f4f4;
+    margin-bottom: 10px;
+}
+
+.train-item p {
+    font-size: 1rem;
+    color: #f68e05;
+    margin: 5px 0;
+}
+
+.train-item button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #f68e05;
+    color: #080000;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.train-item button:hover {
+    background-color: #d88415;
+}
+
+.footer {
+    background-color: #222020;
+    padding: 20px 0;
+    text-align: center;
+    color: #fff;
+}
+
+.footer p {
+    margin: 0;
+}
+
+/* Additional styles for the confirmation page */
+.section p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: #ebe8e5;
+}
+
+.section a {
+    color: #f68e05;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+.section a:hover {
+    text-decoration: underline;
+}

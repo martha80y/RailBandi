@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Tickets</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <img src="{{ url_for('static', filename='logo-search-grid-1x.jpg') }}" alt="RailConnect Logo">
+                <h1>RailConnect <span>Tickets</span></h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="{{ url_for('home') }}">Home</a></li>
+                    <li><a href="{{ url_for('login') }}">Login</a></li>
+                    <li><a href="{{ url_for('search') }}">Search Trains</a></li>
+                    <li><a href="{{ url_for('track') }}">Track Train</a></li>
+                    <li><a href="{{ url_for('book') }}">Book Ticket</a></li>
+                    <li><a href="{{ url_for('cancel_booking') }}">Cancel Ticket</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="ticket-section">
+        <div class="container">
+            <h2>Tickets for {{ bookings[0].name }}</h2>
+            {% for booking in bookings %}
+                <div class="ticket-details">
+                    <p><strong>Name:</strong> {{ booking.name }}</p>
+                    <p><strong>Age:</strong> {{ booking.age }}</p>
+                    <p><strong>Gender:</strong> {{ booking.gender }}</p>
+                    <p><strong>Contact:</strong> {{ booking.contact }}</p>
+                    <p><strong>Email:</strong> {{ booking.email }}</p>
+                    <p><strong>Train:</strong> {{ booking.train.train_name }} ({{ booking.train.train_number }})</p>
+                    <p><strong>Booking ID:</strong> {{ booking.id }}</p>
+                </div>
+                <button onclick="window.print()">Print Ticket</button>
+                <form action="{{ url_for('cancel_booking') }}" method="POST">
+                    <input type="hidden" name="booking_id" value="{{ booking.id }}">
+                    <button type="submit" style="background-color: red; color: white;">Cancel Booking</button>
+                </form>
+                <hr>
+            {% endfor %}
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2024 RailConnect. All rights reserved.</p>
+    </footer>
+</body>
+</html>

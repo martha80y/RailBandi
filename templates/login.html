@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Rail Bandi</title>
+    <link rel="stylesheet" href="../static/style.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" />
+    
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>Rail<span>bandi</span></h1>
+            </div>
+        </div>
+    </header>
+
+    <!-- Description Section -->
+    <section class="description">
+        <div class="container">
+            <p>Welcome to <b>Rail Bandi</b>, your one-stop solution for managing online railway transactions. Our platform offers an easy-to-use interface for booking, managing, and tracking train journeys. Whether you are planning a short trip or a long journey, Rail Bandi is here to make your travel experience smooth and convenient.</p> 
+            <p><marquee>Join us today and discover the ease of modern train travel management!</marquee></p>
+        </div>
+    </section>
+
+    <!-- Login Section -->
+    <section class="section">
+        <div class="container">
+            <h2>Login</h2>
+            <form action="/login" method="post">
+                <div class="form-group">
+                    <label for="username"><i class="fas fa-user"></i> Username</label>
+                    <input type="text" id="username" name="username" placeholder="Enter your username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password"><i class="fas fa-lock"></i> Password</label>
+                    <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                </div>
+                <button type="submit"><i class="fas fa-sign-in-alt"></i> Login</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Rail Bandi. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard - Rail Bandi</title>
+    <link rel="stylesheet" href="../static/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" />
+</head>
+<body>
+
+<!-- User Dashboard Section -->
+<section class="section">
+    <div class="container">
+        <h2>Welcome, {{ user.username }}!</h2>
+        <p>Here are some options for you:</p>
+        <ul>
+            <li><a href="{{ url_for('index') }}"><i class="fas fa-home"></i> Go to Homepage</a></li>
+            <li><a href="{{ url_for('search') }}"><i class="fas fa-search"></i> Search Trains</a></li>
+            <li><a href="{{ url_for('track') }}"><i class="fas fa-train"></i> Track Trains</a></li>
+            <li><a href="{{ url_for('logout') }}"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+        </ul>
+    </div>
+</section>
+
+<!-- Footer Section -->
+<footer class="footer">
+    <div class="container">
+        <p>&copy; 2024 Rail Bandi. All rights reserved.</p>
+    </div>
+</footer>
+
+</body>
+</html>

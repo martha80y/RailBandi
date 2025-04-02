@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Confirmation - Rail Bandi</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="{{ url_for('index') }}"><img src="https://i.ibb.co/j6HZmmx/logo-search-grid-1x.jpg" alt="Rail Bandi Logo"></a>
+                <h1>Rail<span>bandi</span></h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="{{ url_for('index') }}">Home</a></li>
+                    <li><a href="{{ url_for('login') }}">Login</a></li>
+                    <li><a href="{{ url_for('trains') }}">Trains</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="confirmation-section">
+        <div class="container">
+            <h2>Booking Confirmation</h2>
+            <p>Dear {{ user_name }},</p>
+            <p>Your booking has been successfully confirmed!</p>
+            <p>Booking Details:</p>
+            <ul>
+                <li><strong>Booking Name:</strong> {{ booking_name }}</li>
+                <li><strong>Booking ID:</strong> {{ booking_id }}</li>
+                <li><strong>Train Name:</strong> {{ train_name }}</li>
+                <li><strong>Train ID:</strong> {{ train_id }}</li>
+            </ul>
+            <p>Thank you for choosing Rail Bandi. Have a pleasant journey!</p>
+            <p><a href="{{ url_for('index') }}">Go back to homepage</a></p>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Rail Bandi. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

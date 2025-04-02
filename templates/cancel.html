@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cancel Booking</title>
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <img src="{{ url_for('static', filename='logo-search-grid-1x.jpg') }}" alt="RailConnect Logo">
+                <h1>Rail<span>bandi</span></h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="{{ url_for('home') }}">Home</a></li>
+                    <li><a href="{{ url_for('login') }}">Login</a></li>
+                    <li><a href="{{ url_for('search') }}">Search Trains</a></li>
+                    <li><a href="{{ url_for('track') }}">Track Train</a></li>
+                    <li><a href="{{ url_for('book') }}">Book Ticket</a></li>
+                    <li><a href="{{ url_for('cancel_booking') }}">Cancel Ticket</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="cancel-section">
+        <div class="container">
+            <h2>Cancel Booking</h2>
+            <form action="{{ url_for('cancel_booking') }}" method="POST">
+                <div class="cancel-form-group">
+                    <label for="booking_id">Booking ID:</label>
+                    <input type="text" id="booking_id" name="booking_id" required>
+                </div>
+                <div class="cancel-form-group">
+                    <button type="submit">Cancel Booking</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2024 RailConnect. All rights reserved.</p>
+    </footer>
+</body>
+</html>
